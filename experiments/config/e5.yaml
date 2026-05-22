@@ -1,0 +1,6 @@
+experiment: E5
+seed: 42
+window_s: 10.0
+n_perm: 200
+subjects: ["SC4001", "SC4002", "SC4011", "SC4012", "SC4031"]
+duration_s: 600.0

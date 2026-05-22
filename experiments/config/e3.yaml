@@ -1,0 +1,22 @@
+experiment: E3
+seed: 42
+family: simple_cnn
+# Width sweep targeting ~10^2, 10^3, 10^4, 10^5, 10^6, 10^7 parameters.
+# A SimpleCNN with four conv layers of width w on T=512 input has roughly
+#   3*w + 9*w*w + 9*w*w + 9*w/2*w + w ≈ 22.5 w² parameters at large w.
+# So widths roughly (5, 20, 50, 150, 300, 700) hit 1k → 10M.
+width_sweep:
+  - [8, 8]                  # ~ 1 × 10^2
+  - [16, 16]                # ~ 8 × 10^2
+  - [16, 32, 32]            # ~ 6 × 10^3
+  - [32, 64, 64, 32]        # ~ 3 × 10^4
+  - [64, 128, 128, 64]      # ~ 1 × 10^5
+  - [128, 256, 256, 128]    # ~ 5 × 10^5
+  - [256, 384, 384, 256]    # ~ 2 × 10^6
+  - [512, 768, 768, 512]    # ~ 1 × 10^7
+deep_kwargs:
+  epochs: 60
+  batch_size: 64
+  lr: 1.0e-3
+  patience: 12
+artifact_kinds: ["EOG"]

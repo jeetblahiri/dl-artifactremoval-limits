@@ -1,0 +1,8 @@
+experiment: E6
+seed: 42
+channels: [32, 64, 128, 256, 512]
+epochs: 80
+batch_size: 64
+lr: 1.0e-3
+patience: 15
+artifact_kinds: ["EOG", "EMG"]

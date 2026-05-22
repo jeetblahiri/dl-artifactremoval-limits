@@ -1,0 +1,12 @@
+experiment: E1
+seed: 42
+methods:
+  - simple_cnn
+  - novel_cnn
+  - rnn_lstm
+deep_kwargs:
+  epochs: 100
+  batch_size: 64
+  lr: 1.0e-3
+  patience: 12
+artifact_kinds: ["EOG", "EMG"]

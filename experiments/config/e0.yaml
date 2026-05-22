@@ -1,0 +1,6 @@
+experiment: E0
+seed: 42
+n_perm: 200
+feature: "band_power"
+high_freq_band: [50, 80]
+low_freq_band: [0, 1]

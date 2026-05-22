@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "artifact_limits"
+version = "0.1.0"
+description = "Within the Benchmark: Identifiability, Rate-Distortion, and the Structural Limits of EEGdenoiseNet."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Jeet Bandhu Lahiri"},
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "mne>=1.5",
+    "pywavelets>=1.4",
+    "EMD-signal>=1.4",
+    "torch>=2.0",
+    "pytorch-lightning>=2.0",
+    "optuna>=3.3",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "tqdm",
+    "h5py",
+    "click",
+    "pyyaml",
+    "statsmodels",
+    "scikit-image",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "black", "pre-commit", "mypy"]
+viz = ["plotly"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    "ignore::RuntimeWarning:numpy",
+    "ignore:divide by zero encountered in matmul:RuntimeWarning",
+    "ignore:overflow encountered in matmul:RuntimeWarning",
+    "ignore:invalid value encountered in matmul:RuntimeWarning",
+]

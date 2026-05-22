@@ -1,0 +1,41 @@
+{
+  "experiment": "E6",
+  "seed": 42,
+  "channels": [
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "epochs_configured": 80,
+  "epochs_used": 80,
+  "n_parameters": 2710753,
+  "n_train_segments": 7222,
+  "n_test_segments": 3616,
+  "rrmse_t_per_kind": {
+    "EOG": 0.3017937248542958,
+    "EMG": 0.5321939642694958
+  },
+  "rrmse_t_mean": 0.4169938445618958,
+  "wall_seconds": 1226.3072260830013,
+  "config": {
+    "experiment": "E6",
+    "seed": 42,
+    "channels": [
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "epochs": 80,
+    "batch_size": 64,
+    "lr": 0.001,
+    "patience": 15,
+    "artifact_kinds": [
+      "EOG",
+      "EMG"
+    ]
+  }
+}

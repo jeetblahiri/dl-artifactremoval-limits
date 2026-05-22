@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+data/raw/
+data/processed/
+results/logs/
+results/figures/
+paper/*.aux
+paper/*.log
+paper/*.out

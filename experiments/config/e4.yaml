@@ -1,0 +1,17 @@
+experiment: E4
+seed: 42
+alpha_grid: [0.0, 0.05, 0.1, 0.2, 0.3, 0.5, 1.0]
+handcrafted:
+  - identity
+  - wiener_filter
+  - dwt
+  - total_variation
+deep:
+  - simple_cnn
+  - novel_cnn
+deep_kwargs:
+  epochs: 40
+  batch_size: 64
+  lr: 1.0e-3
+  patience: 8
+artifact_kind: "EOG"

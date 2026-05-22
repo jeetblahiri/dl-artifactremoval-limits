@@ -1,0 +1,24 @@
+{
+  "D1_eegdenoisenet": {
+    "url": "https://github.com/ncclabsustech/EEGdenoiseNet",
+    "version": "v1.0",
+    "files": ["EEG_all_epochs.npy", "EOG_all_epochs.npy", "EMG_all_epochs.npy"],
+    "split_index_file": "data/splits/eegdenoisenet_split.json",
+    "sampling_rate_hz": 256,
+    "segment_length_samples": 512,
+    "n_eeg_segments": 4514,
+    "n_eog_segments": 3400,
+    "n_emg_segments": 5598
+  },
+  "D1prime_dependent_mixing": {
+    "constructed_from": "D1",
+    "construction_script": "src/artifact_limits/data/build_D1prime.py",
+    "alpha_grid": [0.0, 0.05, 0.1, 0.2, 0.3, 0.5, 1.0],
+    "seed": 42
+  },
+  "D3_in_vivo_audit": {
+    "url": "https://physionet.org/content/sleep-edfx/1.0.0/",
+    "subjects_used": ["SC4001"],
+    "purpose": "single-recording I(EEG; EOG) and I(EEG; EMG) estimate"
+  }
+}

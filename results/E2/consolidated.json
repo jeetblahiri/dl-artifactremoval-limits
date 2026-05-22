@@ -1,0 +1,286 @@
+{
+  "experiment": "E2",
+  "n_seeds": 5,
+  "wiener_floor_rrmse_t": 0.417264249947864,
+  "wiener_floor_rrmse_t_per_kind": {
+    "EOG": 0.3835979305812185,
+    "EMG": 0.4509305693145095
+  },
+  "wiener_floor_per_snr_per_kind": {
+    "EOG": {
+      "-7.0": 0.47892666347242796,
+      "-4.0": 0.4380043759596468,
+      "-1.0": 0.39762012901870275,
+      "2.0": 0.3540845615640754
+    },
+    "EMG": {
+      "-7.0": 0.6650725730131636,
+      "-4.0": 0.5733450103512269,
+      "-1.0": 0.4808645832431005,
+      "2.0": 0.393531741576719
+    }
+  },
+  "optuna_tuned_handcrafted": {
+    "identity": {
+      "EOG": {
+        "params": {},
+        "val_score": 1.4349902636098741,
+        "n_trials": 1
+      },
+      "EMG": {
+        "params": {},
+        "val_score": 1.4349902617983996,
+        "n_trials": 1
+      }
+    },
+    "bandpass_notch": {
+      "EOG": {
+        "params": {
+          "low": 1.9897556709503978,
+          "high": 49.46427385184962
+        },
+        "val_score": 0.7993787200155051,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "low": 1.9739492071632014,
+          "high": 30.08321077545016
+        },
+        "val_score": 0.7836290382506585,
+        "n_trials": 20
+      }
+    },
+    "wiener_filter": {
+      "EOG": {
+        "params": {
+          "noise_var": 0.0022171954069279305
+        },
+        "val_score": 0.4757470747246919,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "noise_var": 0.49861386483168546
+        },
+        "val_score": 0.5828444565777022,
+        "n_trials": 20
+      }
+    },
+    "dwt": {
+      "EOG": {
+        "params": {
+          "wavelet": "db8",
+          "level": 5,
+          "mode": "hard",
+          "threshold_scale": 0.1106270202232333
+        },
+        "val_score": 1.4351043088680961,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "wavelet": "db8",
+          "level": 3,
+          "mode": "soft",
+          "threshold_scale": 1.983686665795557
+        },
+        "val_score": 0.8362400358597849,
+        "n_trials": 20
+      }
+    },
+    "swt": {
+      "EOG": {
+        "params": {
+          "wavelet": "db4",
+          "level": 5,
+          "mode": "hard",
+          "threshold_scale": 0.1080938893660189
+        },
+        "val_score": 1.4350377033994506,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "wavelet": "db4",
+          "level": 3,
+          "mode": "soft",
+          "threshold_scale": 1.786347381246185
+        },
+        "val_score": 0.8002031110696789,
+        "n_trials": 20
+      }
+    },
+    "emd": {
+      "EOG": {
+        "params": {
+          "n_imfs_to_threshold": 6,
+          "max_imfs": 8,
+          "threshold_scale": 1.8884181178949027
+        },
+        "val_score": 1.0277829236246097,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "n_imfs_to_threshold": 2,
+          "max_imfs": 8,
+          "threshold_scale": 1.7345139077708729
+        },
+        "val_score": 0.8790053600955942,
+        "n_trials": 20
+      }
+    },
+    "total_variation": {
+      "EOG": {
+        "params": {
+          "weight": 0.010908058054131236,
+          "max_iter": 339
+        },
+        "val_score": 1.4349181867136958,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "weight": 4.244410215717803,
+          "max_iter": 290
+        },
+        "val_score": 0.7923535638770621,
+        "n_trials": 20
+      }
+    },
+    "savgol": {
+      "EOG": {
+        "params": {
+          "window": 9,
+          "order": 6
+        },
+        "val_score": 1.4351311406334175,
+        "n_trials": 20
+      },
+      "EMG": {
+        "params": {
+          "window": 7,
+          "order": 1
+        },
+        "val_score": 0.7644943981335378,
+        "n_trials": 20
+      }
+    }
+  },
+  "optuna_n_trials": 20,
+  "methods": [
+    {
+      "method_id": "identity",
+      "rrmse_t_mean": 1.434990259572584,
+      "rrmse_t_std": 6.26506672579702e-10,
+      "rrmse_t_lo": 1.41726633301606,
+      "rrmse_t_hi": 1.4529514452783692,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "bandpass_notch",
+      "rrmse_t_mean": 0.8024323231834402,
+      "rrmse_t_std": 0.005125061125853498,
+      "rrmse_t_lo": 0.7938669255789143,
+      "rrmse_t_hi": 0.8112471709330832,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "wiener_filter",
+      "rrmse_t_mean": 0.530276380380986,
+      "rrmse_t_std": 0.0008295794511039113,
+      "rrmse_t_lo": 0.5247443300218586,
+      "rrmse_t_hi": 0.5359551486723012,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "dwt",
+      "rrmse_t_mean": 1.1508757958547888,
+      "rrmse_t_std": 0.023506492274877184,
+      "rrmse_t_lo": 1.133442703519303,
+      "rrmse_t_hi": 1.168089648734414,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "swt",
+      "rrmse_t_mean": 1.1211580424752399,
+      "rrmse_t_std": 0.002832432971184381,
+      "rrmse_t_lo": 1.103686366422778,
+      "rrmse_t_hi": 1.1384937196689382,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "emd",
+      "rrmse_t_mean": 0.9468910236926916,
+      "rrmse_t_std": 0.007294316559120908,
+      "rrmse_t_lo": 0.9394786211935499,
+      "rrmse_t_hi": 0.9545734509525626,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "total_variation",
+      "rrmse_t_mean": 1.1174467172709988,
+      "rrmse_t_std": 0.000880940893691838,
+      "rrmse_t_lo": 1.1001004021943583,
+      "rrmse_t_hi": 1.134737804661913,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "savgol",
+      "rrmse_t_mean": 1.1061660278019316,
+      "rrmse_t_std": 0.00028709480654061034,
+      "rrmse_t_lo": 1.0885144729328722,
+      "rrmse_t_hi": 1.1236084327853817,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "simple_cnn",
+      "rrmse_t_mean": 0.6049354314917111,
+      "rrmse_t_std": 0.0005486946350478903,
+      "rrmse_t_lo": 0.6010116366919676,
+      "rrmse_t_hi": 0.6090567162699295,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "novel_cnn",
+      "rrmse_t_mean": 0.5565803646852924,
+      "rrmse_t_std": 0.001484963063994322,
+      "rrmse_t_lo": 0.5527281811775862,
+      "rrmse_t_hi": 0.5606179205596569,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "rnn_lstm",
+      "rrmse_t_mean": 0.42584442064714817,
+      "rrmse_t_std": 0.0014510480440137231,
+      "rrmse_t_lo": 0.4210484137404361,
+      "rrmse_t_hi": 0.43082664820672606,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "deep_separator",
+      "rrmse_t_mean": 0.47680283271348245,
+      "rrmse_t_std": 0.0017077695893209757,
+      "rrmse_t_lo": 0.4725619484716628,
+      "rrmse_t_hi": 0.481274142830764,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "eeg_denoise_former",
+      "rrmse_t_mean": 0.4758504517318431,
+      "rrmse_t_std": 0.00586193262309394,
+      "rrmse_t_lo": 0.47156053441302725,
+      "rrmse_t_hi": 0.4803723082890041,
+      "n_seeds": 5
+    },
+    {
+      "method_id": "ic_unet",
+      "rrmse_t_mean": 0.4436784637193602,
+      "rrmse_t_std": 0.0033251200845169273,
+      "rrmse_t_lo": 0.4387778226265845,
+      "rrmse_t_hi": 0.4487066754305273,
+      "n_seeds": 5
+    }
+  ]
+}
