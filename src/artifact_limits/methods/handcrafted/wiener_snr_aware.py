@@ -1,4 +1,4 @@
-"""SNR-aware Wiener-filter variants.
+r"""SNR-aware Wiener-filter variants.
 
 The default ``WienerFilter`` is built from \(\Sigma_S\) and \(\Sigma_A\) at unit
 artifact scale; under the EEGdenoiseNet protocol the test mixture is
@@ -30,7 +30,7 @@ def _lam_sq(snr_db: float) -> float:
 
 
 class WienerFilterKnownSNR(DenoiserBase):
-    """Per-SNR Wiener filter applied at matched test-time SNR.
+    r"""Per-SNR Wiener filter applied at matched test-time SNR.
 
     At ``fit`` time we precompute one (T, T) Wiener matrix per SNR level
     using \(\Sigma_S + \lambda^2 \Sigma_A\). At ``transform`` time the caller
@@ -86,7 +86,7 @@ class WienerFilterKnownSNR(DenoiserBase):
 
 
 class WienerFilterSNRMarginal(DenoiserBase):
-    """Wiener filter optimised over the SNR-mixture distribution.
+    r"""Wiener filter optimised over the SNR-mixture distribution.
 
     For SNR levels \(s_1,\dots,s_k\) sampled uniformly at training/test time,
     we set \(\Sigma_X = \Sigma_S + \overline{\lambda^2}\,\Sigma_A\) where
